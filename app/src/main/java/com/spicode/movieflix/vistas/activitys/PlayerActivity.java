@@ -1,6 +1,8 @@
 package com.spicode.movieflix.vistas.activitys;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -39,12 +41,18 @@ public class PlayerActivity extends AppCompatActivity {
 
         try {
             JzvdStd jzvdStd = (JzvdStd) findViewById(R.id.jz_video);
+            jzvdStd.loadingProgressBar.setProgressTintList(ColorStateList.valueOf(Color.RED));
+
             jzvdStd.setUp(VIDEO_URI
                     , VIDEO_TITLE, 0);
             jzvdStd.setScreenFullscreen();
-            jzvdStd.backButton.setVisibility(View.VISIBLE);
-            jzvdStd.batteryLevel.setVisibility(View.GONE);
-            jzvdStd.batteryTimeLayout.setVisibility(View.GONE);
+            jzvdStd.startButton.setVisibility(View.VISIBLE);
+            jzvdStd.backButton.setVisibility(View.GONE);
+            jzvdStd.widthRatio = 16;
+            jzvdStd.heightRatio = 9;
+            jzvdStd.batteryLevel.setVisibility(View.VISIBLE);
+            jzvdStd.bottomProgressBar.setProgressTintList(ColorStateList.valueOf(Color.RED));
+            jzvdStd.batteryTimeLayout.setVisibility(View.VISIBLE);
             jzvdStd.titleTextView.setVisibility(View.VISIBLE);
             jzvdStd.fullscreenButton.setVisibility(View.GONE);
 
