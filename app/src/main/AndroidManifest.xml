@@ -12,17 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".vistas.activitys.SignUp"
+            android:exported="false" />
+        <activity
             android:name=".vistas.activitys.PlayerActivity"
-            android:exported="true"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="landscape"/>
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".vistas.activitys.LoginActivity"
             android:exported="true" />
-        <activity android:name=".vistas.activitys.MainActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden" android:screenOrientation="portrait">
-
-        </activity>
+        <activity
+            android:name=".vistas.activitys.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".vistas.activitys.SplashScreen"
             android:exported="true">

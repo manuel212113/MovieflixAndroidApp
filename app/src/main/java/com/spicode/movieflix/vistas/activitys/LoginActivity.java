@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
     Button loginBtn;
     EditText correo,contraseña;
+    TextView txtCrearCuenta;
 
 
 
@@ -35,14 +37,22 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        /* Apple Loading es un progressbar customizado :D*/
+        /* Custom Loading es un progressbar customizado :D*/
         CustomLoading dialog= new CustomLoading(LoginActivity.this);
         mAuth = FirebaseAuth.getInstance();
         correo = (EditText) findViewById(R.id.txtUser);
         contraseña = (EditText) findViewById(R.id.txtPass);
         loginBtn = (Button) findViewById(R.id.button);
+        txtCrearCuenta= (TextView) findViewById(R.id.txtCreateAccount);
 
 
+        txtCrearCuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, SignUp.class));
+                finish();
+            }
+        });
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

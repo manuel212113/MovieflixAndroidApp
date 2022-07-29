@@ -46,8 +46,13 @@
         <entry key="..\:/Users/Duoc/AndroidStudioProjects/Movieflix/app/src/main/res/layout/player_activity.xml" value="0.1796875" />
         <entry key="..\:/Users/Duoc/AndroidStudioProjects/Movieflix/app/src/main/res/layout/slider_layout.xml" value="0.22" />
         <entry key="..\:/Users/Duoc/AndroidStudioProjects/Movieflix/app/src/main/res/menu/bottom_menu.xml" value="0.1796875" />
-        <entry key="..\:/Users/Usuario-Manuel/Downloads/MovieflixAndroidApp-main/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/Usuario-Manuel/Downloads/MovieflixAndroidApp-main/app/src/main/res/drawable/btn_bg.xml" value="0.163" />
+        <entry key="..\:/Users/Usuario-Manuel/Downloads/MovieflixAndroidApp-main/app/src/main/res/drawable/input_bg.xml" value="0.163" />
+        <entry key="..\:/Users/Usuario-Manuel/Downloads/MovieflixAndroidApp-main/app/src/main/res/drawable/layout_bg.xml" value="0.1" />
+        <entry key="..\:/Users/Usuario-Manuel/Downloads/MovieflixAndroidApp-main/app/src/main/res/layout/activity_login.xml" value="0.12681159420289856" />
         <entry key="..\:/Users/Usuario-Manuel/Downloads/MovieflixAndroidApp-main/app/src/main/res/layout/activity_player.xml" value="0.13134057971014493" />
+        <entry key="..\:/Users/Usuario-Manuel/Downloads/MovieflixAndroidApp-main/app/src/main/res/layout/activity_sign_up.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Usuario-Manuel/Downloads/MovieflixAndroidApp-main/app/src/main/res/layout/loading_layout.xml" value="0.13088012139605462" />
       </map>
     </option>
   </component>
