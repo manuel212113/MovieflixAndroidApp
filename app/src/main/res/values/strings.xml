@@ -34,5 +34,8 @@
     <string name="size">Size:</string>
     <string name="duration">Duration:</string>
     <string name="resolution">Resolution:</string>
+    <string name="default_video">http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4</string>
+    <string name="play_video">Play Video</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

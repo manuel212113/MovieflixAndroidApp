@@ -6,6 +6,7 @@ public class ModeloDatosPelicula {
     private String PImagen;
     private String PVideo;
 
+
     public String getPTitulo() {
         return PTitulo;
     }

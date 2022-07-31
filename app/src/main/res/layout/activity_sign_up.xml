@@ -64,7 +64,7 @@
         app:layout_constraintTop_toBottomOf="@id/txtEmail" />
 
     <EditText
-        android:id="@+id/txtEdad"
+        android:id="@+id/txtPhone"
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:layout_marginTop="180dp"
@@ -76,8 +76,8 @@
         android:ems="10"
         android:fontFamily="@font/poppins_medium"
         android:foregroundTint="@color/white"
-        android:hint="Edad"
-        android:inputType="text|number"
+        android:hint="Telefono"
+        android:inputType="phone"
         android:padding="8dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
