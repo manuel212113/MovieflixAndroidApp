@@ -4,9 +4,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <queries>
         <package android:name="org.videolan.vlc" />
     </queries>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -14,6 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity
+            android:name=".vistas.activitys.MovieDetail"
+            android:exported="false" />
         <activity
             android:name=".vistas.activitys.SignUp"
             android:exported="false" />
@@ -25,12 +30,12 @@
         <activity
             android:name=".vistas.activitys.LoginActivity"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".vistas.activitys.MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:theme="@style/Theme.Movieflix"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Movieflix" />
         <activity
             android:name=".vistas.activitys.SplashScreen"
             android:exported="true">

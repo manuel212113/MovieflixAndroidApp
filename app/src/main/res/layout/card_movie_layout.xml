@@ -4,14 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="125dp"
     android:background="@color/fondoApp"
+    android:padding="5dp"
+
     android:layout_height="wrap_content">
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="125dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/colorSecuandarioDark"
-        app:cardCornerRadius="5dp"
+        app:cardBackgroundColor="@color/fondoApp"
+        app:cardCornerRadius="2dp"
 
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
@@ -37,8 +42,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginTop="150dp"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/quicksand_bold"
             android:text="Titulo"
+            android:layout_marginLeft="3dp"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

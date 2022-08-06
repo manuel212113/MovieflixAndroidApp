@@ -22,4 +22,9 @@
         <item name="colorControlHighlight">@color/black</item>
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>
+
+    <style name="ThemeOverlay.BottomNavView" parent="">
+        <item name="colorPrimary">@color/coloRosaSecuandario</item>
+        <item name="colorOnSurface">@color/white</item>
+    </style>
 </resources>

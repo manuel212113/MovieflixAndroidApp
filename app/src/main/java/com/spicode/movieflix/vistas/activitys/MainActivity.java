@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private RecyclerView UltimasPeliculasRV;
 
-    String jsonURL = "https://pastebin.com/raw/8dmTqusb";
+    String jsonURL = "https://pastebin.com/raw/eACbWJRd";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,7 +165,11 @@ public class MainActivity extends AppCompatActivity {
                         JSONObject object1 = array.getJSONObject(i);
                         String TituloPeli = object1.getString("PUPTitulo");
                         String ImagenPeli = object1.getString("PUPImagen");
-                        UltimasPeliculasList.add(new UltimasPeliculas(TituloPeli, ImagenPeli));
+                        String LogoPeli= object1.getString("PUPLogo");
+                        String ImagenBannerPeli= object1.getString("PUPImagenBanner");
+                        String SinopsisPeli=object1.getString("PUPDescripcion");
+                        String UrlVideoPeli=object1.getString("PUPVideo");
+                        UltimasPeliculasList.add(new UltimasPeliculas(TituloPeli, ImagenPeli,UrlVideoPeli,SinopsisPeli,ImagenBannerPeli,LogoPeli));
                     }
 
                     UltimasPeliculasRV = findViewById(R.id.Rv_UltimasPeliculas);

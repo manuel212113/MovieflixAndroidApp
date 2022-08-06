@@ -85,7 +85,7 @@
         android:ems="10"
         android:fontFamily="@font/poppins_medium"
         android:foregroundTint="@color/white"
-        android:hint="Usuario"
+        android:hint="Correo"
         android:inputType="textEmailAddress"
         android:padding="8dp"
         android:textColor="@color/white"

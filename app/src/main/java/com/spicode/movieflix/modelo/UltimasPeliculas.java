@@ -11,14 +11,22 @@ public class UltimasPeliculas {
     private  String PLogo;
 
 
+    public UltimasPeliculas() {
 
-    public UltimasPeliculas(){
 
     }
-    public UltimasPeliculas(String PTitulo, String PImagen) {
+    public UltimasPeliculas(String PTitulo, String PImagen, String PVideo, String PDescripcion, String PImagenBanner, String PLogo) {
         this.PTitulo = PTitulo;
         this.PImagen = PImagen;
+        this.PVideo = PVideo;
+        this.PDescripcion = PDescripcion;
+        this.PImagenBanner = PImagenBanner;
+        this.PLogo = PLogo;
     }
+
+
+
+
 
 
 

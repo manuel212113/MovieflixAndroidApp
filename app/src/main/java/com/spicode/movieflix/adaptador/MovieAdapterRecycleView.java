@@ -1,6 +1,8 @@
 package com.spicode.movieflix.adaptador;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +15,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.spicode.movieflix.R;
 import com.spicode.movieflix.modelo.UltimasPeliculas;
+import com.spicode.movieflix.vistas.activitys.MainActivity;
+import com.spicode.movieflix.vistas.activitys.MovieDetail;
+import com.spicode.movieflix.vistas.activitys.PlayerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MovieAdapterRecycleView extends RecyclerView.Adapter<MovieAdapterRecycleView.MyViewHolder> {
 
-     private List<UltimasPeliculas> mData;
+    private List<UltimasPeliculas> mData;
+    private Context context;
+
 
     public MovieAdapterRecycleView( List<UltimasPeliculas> mData) {
         this.mData = mData;
@@ -35,10 +42,23 @@ public class MovieAdapterRecycleView extends RecyclerView.Adapter<MovieAdapterRe
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull MyViewHolder viewHolder, @SuppressLint("RecyclerView") int i) {
 
         viewHolder.TvTitle.setText(mData.get(i).getPTitulo());
         Glide.with(viewHolder.itemView).load(mData.get(i).getPImagen()).into(viewHolder.imgMovie);
+        viewHolder.imgMovie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Detail_Pelicula  = new Intent(viewHolder.itemView.getContext(), MovieDetail.class);
+                Detail_Pelicula.putExtra("descripcion", mData.get(i).getPDescripcion());
+                Detail_Pelicula.putExtra("titulo", mData.get(i).getPTitulo());
+                Detail_Pelicula.putExtra("logo",mData.get(i).getPLogo());
+                Detail_Pelicula.putExtra("linkPeli",mData.get(i).getPVideo());
+                Detail_Pelicula.putExtra("ImgBanner",mData.get(i).getPImagenBanner());
+                viewHolder.itemView.getContext().startActivity(Detail_Pelicula);
+            }
+        });
+
     }
 
     @Override
