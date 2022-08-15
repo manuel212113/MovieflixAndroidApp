@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath api-backend/movieflix movieflix.wsgi --log-file -
+web: gunicorn --pythonpath movieflix movieflix.wsgi --log-file -
