@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.views import LoginView,LogoutView
-from .views import ViewAddMovie
+from .views import ViewAddMovie,crearPelicula,MovieList
 
 
 """movieflix URL Configuration
@@ -23,6 +23,8 @@ from django.urls import path,include
 
 urlpatterns = [
  path ('login', LoginView.as_view(template_name='login.html') , name='login' ),
- path('app/movie/add', ViewAddMovie, name="ViewAddMovie" )
+ path('app/movie/add', ViewAddMovie, name="ViewAddMovie" ),
+ path('app/movie/Agregar_Pelicula/', crearPelicula, name="crearPelicula" ),
+ path('api/MovieList', MovieList),
 
 ]

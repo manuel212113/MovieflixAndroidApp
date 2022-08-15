@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)b#7+u2@t5^m(tdx_w*&0*79fe^s1*_mb_b+yrrk7hxfv_a9ab
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'Peliculas',
     'movieflix',
+    'rest_framework',
+    'corsheaders',
     'django.contrib.staticfiles',
 ]
 
@@ -53,6 +55,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'movieflix.urls'
 
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = ( 
+    'http://localhost:8080',
+    'http://127.0.0.1:8080',
+ )
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

@@ -100,14 +100,14 @@
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="fas fa-user"></i>
-                                <span>Usuarios</span>
+                                <span>Peliculas</span>
                             </a>
                             <ul class="submenu ">
                                  <li class="submenu-item ">
-                                    <a href="{% url 'MostarListaUsuarios' %}">Listar Usuarios</a>
+                                    <a href="{% url 'MostarListaUsuarios' %}">Listar Peliculas</a>
                                 </li>
                                 <li class="submenu-item active ">
-                                    <a href="{% url 'VistaAgregarUsuario' %}">Agregar Usuario</a>
+                                    <a href="{% url 'VistaAgregarUsuario' %}">Agregar Pelicula</a>
                                 </li>
                           
                             </ul>
@@ -174,17 +174,19 @@
                 <!-- Basic Horizontal form layout section start -->
                 <section id="basic-horizontal-layouts">
                     
-                        <div class="col-md-8 col-2">
+                        <div class="col-md-9 col-lg-12 ">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Registro</h4>
+                                    <h4 class="card-title">Agregar Pelicula</h4>
                                 </div>
 
                                 <div class="card-content">
-                                    <img  id="movieImage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png" class="card-img-top img-fluid w-50 " alt="singleminded" style="margin-left:150px;width:100px; height:300px;">
 
-                                    <div class="card-body">
-                                        <form class="form form-horizontal">
+                                    <div class="card-body mb-4">
+                                        <form class="form form-horizontal mb-4">
+                                            <img  id="movieImage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png" class=" img-fluid  rounded float-right " alt="singleminded" style="margin-left:10px; margin-bottom: 10px; height:400px;">
+                                            <img   id="movieImageBanner" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png" class=" img-fluid  rounded float-left img-thumbnail" alt="singleminded" style="margin-left:0px; margin-bottom: 30px; height:300px;">
+
                                             <div class="form-body">
                                                 <div class="row">
                                                  <div class="col-md-4">
@@ -216,10 +218,23 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
+                                                        <label>Genero </label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="form-group ">
+                                                            <div class="position-relative">
+                                                                <textarea type="text" class="form-control"
+                                                                    placeholder="Apellido" id="Genero">
+                                                                </textarea>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
                                                         <label>Descripcion </label>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <div class="form-group has-icon-left">
+                                                        <div class="form-group ">
                                                             <div class="position-relative">
                                                                 <textarea type="text" class="form-control"
                                                                     placeholder="Apellido" id="desc">
@@ -229,43 +244,36 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <label>Email</label>
+                                                        <label>Logo</label>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <div class="form-group has-icon-left">
+                                                        <div class="position-relative">
+
+                                                         <img id="logoImage" class="img-thumbnail " src="https://lenguayliteratura.org/proyectoaula/wp-content/uploads/2016/02/no-logo.jpg">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mt-2">
+                                                        <label>Link Pelicula (MP4)</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="form-group ">
                                                             <div class="position-relative">
-                                                                <input type="email" class="form-control"
-                                                                    placeholder="Correo" id="correo">
-                                                                <div class="form-control-icon">
-                                                                    <i class="bi bi-envelope"></i>
-                                                                </div>
+                                                                <input type="url" class="form-control"
+                                                                    placeholder="link Pelicula" id="linkpeli">
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <label>Celular</label>
-                                                    </div>
-                                                    <div class="col-md-8">
-                                                        <div class="form-group has-icon-left">
-                                                            <div class="position-relative">
-                                                                <input type="number" class="form-control"
-                                                                    placeholder="Celular" id="celular">
-                                                                <div class="form-control-icon">
-                                                                    <i class="bi bi-phone"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label>Tipo Usuario</label>
+                                                        <label>Tipo Pelicula</label>
                                                     </div>
                                                     <div class="col-md-8">
                                                         <div class="form-group has-icon-left">
                                                             <div class="position-relative">
                                                     <select class="col-md-8 form-control" style="padding-left:40px" id="tipoUsuario">
-                                                        <option>Administrador</option>
-                                                        <option>Paciente</option>
-                                                        <option>Medico</option>
+                                                        <option>Ultimas Peliculas</option>
+                                                        <option>Retro</option>
+                                                        <option>Mas vistas</option>
                                                     </select>
                                                                 <div class="form-control-icon">
                                                                     <i class="bi  bi-person-badge-fill"></i>
@@ -276,7 +284,7 @@
                                                     
                                                     
                                                     <div class="col-12 d-flex justify-content-end">
-                                                        <button type="button" id="btnGuardar" disabled
+                                                        <button type="button" id="btnGuardar" 
                                                             class="btn btn-primary me-1 mb-1">Guardar</button>
                                                         <button type="reset"
                                                             class="btn btn-light-secondary me-1 mb-1" id="btnVaciar">Vaciar</button>
@@ -309,7 +317,7 @@
                     </div>
                     <div class="float-end">
                         <p>Version 0.0.1 <span class="text-danger"></span> by <a
-                                href="google.com">PostRural</a></p>
+                                href="google.com">Movieflix</a></p>
                     </div>
                 </div>
             </footer>
@@ -329,8 +337,8 @@
 
 function AlertaExito(){
 	 Swal.fire(
-    'Usuario Creado!',
-    'el usuario se creo correctamente',
+    'Pelicula  Creada!',
+    'La peli se creo correctamente',
     'success'
      )
     $("#btnVaciar").click();
@@ -340,34 +348,74 @@ function AlertaExito(){
 
 }
 
+var ano_estreno="";
+
+
 $( "#buscarbtn" ).click(function() {
     var api_key = "165ba8a99d564db96cbecfd2479a42f6";
 	var baseimg = "http://image.tmdb.org/t/p/w500";
     var film = $('#term').val();
-
+    var json3="";
 
     if (film == '') {
-			$('#poster').html("<h2 class='loading'>Please enter a seach.</h2>");
+        alert('id campo tmdb vacio')
 		} else {
         
 
 			$.getJSON("https://api.themoviedb.org/3/movie/" +
 			    parseInt(film) +
 			      "?api_key=" +
-			      api_key     +"&language=es"+
-			      "&callback=?",
+			      api_key     +"&language=es&include_image_language=en"+
+			      "&callback=?&append_to_response=videos,images",
 				function(json) {
-                    console.log(json);
+                  
 
                         $("#movieImage").attr('src',baseimg + json.poster_path);
+                      
+                        $("#movieImageBanner").attr('src',baseimg + json.backdrop_path);
+
                         $("#titulo").val( json.title);
                         $("#desc").val( json.overview);
+                        ano_estreno=json.release_date;
+                        json3="";
+                        generos=[]
+                        for (var i = 0; i < (json.genres).length; i++ ){
+                            gen= json.genres[i].name;
+                            generos.push(gen);
+                        }
+                        var stringGeneros=generos.toString();
+                        $("#Genero").val( stringGeneros);
+                        if((json.images.logos).length>=2){
+                            json3="1";
+
+                            $("#logoImage").attr('src', "http://image.tmdb.org/t/p/original"+json.images.logos[0].file_path);
+
+               
+                        }
+                            $.getJSON("https://api.themoviedb.org/3/movie/" +
+			    parseInt(film) +
+			      "?api_key=" +
+			      api_key+"&language=es&include_image_language=es"+
+			      "&callback=?&append_to_response=images",
+                  function (json){
+                    console.log(json)
+                    $("#logoImage").attr('src', "http://image.tmdb.org/t/p/original"+json.images.logos[0].file_path);
+                  
+                  
+                });
+                        
 
 
                     
               });
+
+           
+             
+            }
+        }
+    );
             
-          }
+          
 		
 		
     // this throws a warning now lol
@@ -375,7 +423,7 @@ $( "#buscarbtn" ).click(function() {
 	
 
 
-    })  
+      
      
 
 
@@ -395,7 +443,7 @@ $( "#buscarbtn" ).click(function() {
     $( "#btnGuardar" ).click(function() {
      
 
-   if($("#nombre").val()=="" || $("#Apellido").val()=="" || $("#correo").val()=="" || $("#celular").val()=="" ){
+   if($("#titulo").val()=="" || $("#desc").val()=="" || $("#Genero").val()==""  || $("#linkpeli").val()=="" ){
       
       AlertaError();
 
@@ -404,21 +452,26 @@ $( "#buscarbtn" ).click(function() {
    $("#btnGuardar").text("");
         var html='<span class="spinner-border spinner-border-sm" id="circuloCargando" role="status" aria-hidden="true"></span>  <span class="visually-visible">Cargando...</span>'
   $( this ).append(html);
-   
+  let OnlyYearRealease = ano_estreno.split(" ")[0]
     let data = new FormData(); // 2
-    data.append("rut", $("#RUT").val());  
-    data.append("nombre", $("#nombre").val());  
-    data.append("apellido", $("#Apellido").val());
-    data.append("celular", $("#celular").val());
-    data.append("correo", $("#correo").val());
-    data.append("tipousuario", $("#tipoUsuario").val());
+    data.append("titulo", $("#titulo").val());  
+    data.append("descripcion", $("#desc").val());  
+    data.append("genero", $("#Genero").val());
+    data.append("LinkPelicula", $("#linkpeli").val());
+    data.append("tipoPelicula", $("#tipoUsuario").val());
+    data.append("ImagenPoster", $("#movieImage").attr('src'));
+    data.append("ImagenBanner", $("#movieImageBanner").attr('src'));
+    data.append("ImageLogo", $("#logoImage").attr('src'));
+    data.append("AnoEstreno", OnlyYearRealease);  
+
+
     
 
 
 
     data.append("csrfmiddlewaretoken", '{{csrf_token}}'); // 3
 
-    axios.post('crear_usuario/', data) // 4
+    axios.post('Agregar_Pelicula/', data) // 4
      .then(res => AlertaExito())  // 5
      .catch(errors => console.log(errors)) // 6
 
