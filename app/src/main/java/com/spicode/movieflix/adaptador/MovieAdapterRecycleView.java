@@ -45,7 +45,7 @@ public class MovieAdapterRecycleView extends RecyclerView.Adapter<MovieAdapterRe
     public void onBindViewHolder(@NonNull MyViewHolder viewHolder, @SuppressLint("RecyclerView") int i) {
 
         viewHolder.TvTitle.setText(mData.get(i).getPTitulo());
-        Glide.with(viewHolder.itemView).load(mData.get(i).getPImagen()).into(viewHolder.imgMovie);
+        Glide.with(viewHolder.itemView).load(mData.get(i).getPImagen()).override(300, 200).into(viewHolder.imgMovie);
         viewHolder.imgMovie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -46,6 +46,7 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -154,21 +155,22 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
         UltimasPeliculasList = new ArrayList<>();
 
-
-        StringRequest request = new StringRequest(Request.Method.GET, jsonURL, new Response.Listener<String>() {
+        jsonURL="https://movieflixdemo.onrender.com/api/MovieList?format=json";
+        StringRequest request = new StringRequest (Request.Method.GET, jsonURL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
-                    JSONObject object = new JSONObject(response);
-                    JSONArray array = object.getJSONArray("UltimasPeliculas");
-                    for (int i = 0; i < array.length(); i++) {
-                        JSONObject object1 = array.getJSONObject(i);
-                        String TituloPeli = object1.getString("PUPTitulo");
-                        String ImagenPeli = object1.getString("PUPImagen");
-                        String LogoPeli= object1.getString("PUPLogo");
-                        String ImagenBannerPeli= object1.getString("PUPImagenBanner");
-                        String SinopsisPeli=object1.getString("PUPDescripcion");
-                        String UrlVideoPeli=object1.getString("PUPVideo");
+                    JSONArray jsonarray = new JSONArray(response);
+
+
+                    for (int i = 0; i < jsonarray.length(); i++) {
+                        JSONObject jsonobject = jsonarray.getJSONObject(i);
+                        String TituloPeli = jsonobject.getString("Titulo");
+                        String ImagenPeli = jsonobject.getString("ImagenPoster");
+                        String LogoPeli= jsonobject.getString("ImagenLogo");
+                        String ImagenBannerPeli= jsonobject.getString("ImagenBanner");
+                        String SinopsisPeli= new String(jsonobject.getString("Descripcion").getBytes("ISO-8859-1"),"UTF-8");
+                        String UrlVideoPeli=jsonobject.getString("LinkPelicula");
                         UltimasPeliculasList.add(new UltimasPeliculas(TituloPeli, ImagenPeli,UrlVideoPeli,SinopsisPeli,ImagenBannerPeli,LogoPeli));
                     }
 
@@ -186,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
 
                     dialog.hide();
 
-                } catch (JSONException e) {
+                } catch (JSONException | UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
             }
